@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+body {
+    background-color: rgb(182, 183, 198);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    color: #fff;
+    height: 100vh;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container {
+    display: flex;
+    width: 90%;
+    height:100%;
+}
+
+.panel {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100%;
+    flex-grow: 1;
+    border-radius: 50px;
+    cursor: pointer;
+    position: relative;
+    transition: flex 1s;
+    margin: 0 0.8rem;
+    overflow-x: hidden;
+    opacity: 0.5;
+}
+
+h3 {
+    font-size: 24px;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    margin: 0;
+    opacity: 0;
+    z-index: 10;
+}
+
+.panel.active {
+    flex: 5;
+    opacity: 1;
+    transition: 0.3s;
+}
+.panel.active h3 {
+    opacity: 1;
+    transition: 0.3s;
+}
+
+
+/* 第4,5項 在螢幕小於480px 不顯示 */
+@media (max-width: 480px) {
+    .container {
+        width: 100vw;
+    }
+    .panel:nth-of-type(4) ,
+    .panel:nth-of-type(5) {
+        display: none;
+    }
+}
